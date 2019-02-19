@@ -17,7 +17,7 @@ public class PizzaManager {
 
     @PersistenceContext
     EntityManager em;
-
+// add pizza
     public void addPizza(Pizza p) {
        
         em.persist(p);
