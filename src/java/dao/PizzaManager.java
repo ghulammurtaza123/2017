@@ -18,10 +18,22 @@ public class PizzaManager {
     @PersistenceContext
     EntityManager em;
 // add pizza
+
     public void addPizza(Pizza p) {
-       
+
         em.persist(p);
 
+    }
+
+    public void editPizza(Pizza p) {
+
+        em.merge(p);
+
+    }
+
+    public Pizza findById(Integer id) {
+
+        return em.find(Pizza.class, id);
     }
 
     public void removePizza(Pizza p) {
